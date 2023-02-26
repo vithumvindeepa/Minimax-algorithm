@@ -1,4 +1,4 @@
 package lk.ijse.dep.service;
 
-public class WInner {
+public class Winner {
 }
