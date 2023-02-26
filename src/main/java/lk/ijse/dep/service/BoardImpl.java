@@ -1,8 +1,6 @@
 package lk.ijse.dep.service;
 
 public class BoardImpl implements Board{
-    private static final int NUM_OF_COLS = 6;
-    private static final int NUM_OF_ROWS = 5;
     private final BoardUI boardUI;
     private final Piece[][] pieces;
 
@@ -10,16 +8,22 @@ public class BoardImpl implements Board{
     public BoardImpl(BoardUI boardUI) {
         this.boardUI = boardUI;
         this.pieces = new Piece[NUM_OF_ROWS][NUM_OF_COLS];
+
+        for (int col=0; col<NUM_OF_COLS;col++){
+            for (int row=0;row<NUM_OF_ROWS;row++){
+                pieces[col][row]=Piece.EMPTY
+            }
+        }
     }
 
     @Override
     public BoardUI getBoardUI() {
-        return null;
+        return boardUI;
     }
 
     @Override
     public int findNextAvailableSpot(int col) {
-        return 0;
+        return -1;
     }
 
     @Override
