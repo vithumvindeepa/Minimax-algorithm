@@ -1,28 +1,36 @@
 package lk.ijse.dep.service;
 
 public class BoardImpl implements Board{
-    private final BoardUI boardUI;
+
     private final Piece[][] pieces;
+    private final BoardUI boardUI;
+
 
 
     public BoardImpl(BoardUI boardUI) {
         this.boardUI = boardUI;
         this.pieces = new Piece[NUM_OF_ROWS][NUM_OF_COLS];
 
-        for (int col=0; col<NUM_OF_COLS;col++){
-            for (int row=0;row<NUM_OF_ROWS;row++){
-                pieces[col][row]=Piece.EMPTY;
+        for (int i=0; i<NUM_OF_COLS;i++){
+            for (int j=0;j<NUM_OF_ROWS;j++){
+
+                pieces[i][j]=Piece.EMPTY;
             }
         }
     }
 
     @Override
     public BoardUI getBoardUI() {
-        return boardUI;
+        return this.boardUI;
     }
 
     @Override
     public int findNextAvailableSpot(int col) {
+        for (int i = 0; i < NUM_OF_ROWS; i++) {
+            if (pieces[col][i] == Piece.EMPTY) {
+                return i;
+            }
+        }
         return -1;
     }
 
@@ -40,6 +48,11 @@ public class BoardImpl implements Board{
     public void updateMove(int col, Piece move) {
 
     }
+
+    @Override
+   public void updateMove(int col,int row,Piece move){
+
+   }
 
     @Override
     public Winner findWinner() {
