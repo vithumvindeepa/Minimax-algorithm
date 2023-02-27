@@ -9,7 +9,11 @@ public class Winner {
 
 
     public Winner(Piece winningPiece) {
-
+        this.winningPiece = winningPiece;
+        this.col1=-1;
+        this.row1=-1;
+        this.col2=-1;
+        this.row2=-1;
     }
 
     public static int getNumOfCols() {
