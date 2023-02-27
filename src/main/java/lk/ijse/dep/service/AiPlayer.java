@@ -22,4 +22,11 @@ public class AiPlayer extends Player{
             board.getBoardUI().notifyWinner(new Winner(Piece.EMPTY));
         }
     }
+    private int minimax(int depth,boolean maximizingPlayer){
+        int CERTAIN_NUMBER=4;
+        if (depth==CERTAIN_NUMBER|| board.existLegalMoves()){
+
+        }
+        return -1;
+    }
 }
