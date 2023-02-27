@@ -36,13 +36,19 @@ public class BoardImpl implements Board{
 
     @Override
     public boolean isLegalMove(int col) {
-        return false;
+        return findNextAvailableSpot(col) > -1;
     }
 
     @Override
     public boolean existLegalMoves() {
+        for (int i = 0; i < NUM_OF_COLS; i++) {
+            if (findNextAvailableSpot(i) > -1) {
+                return true;
+            }
+        }
         return false;
     }
+
 
     @Override
     public void updateMove(int col, Piece move) {
