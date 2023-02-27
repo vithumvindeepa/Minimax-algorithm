@@ -2,19 +2,14 @@ package lk.ijse.dep.service;
 
 public class Winner {
     private Piece winningPiece;
-    private static final int NUM_OF_COLS = 8;
-    private static final int NUM_OF_ROWS = 8;
-    private Piece[][] pieces;
     private int col1;
     private int row1;
     private int col2;
-
-
-
     private int row2;
 
+
     public Winner(Piece winningPiece) {
-        this.setPieces(new Piece[getNumOfCols()][getNumOfRows()]);
+
     }
 
     public static int getNumOfCols() {
