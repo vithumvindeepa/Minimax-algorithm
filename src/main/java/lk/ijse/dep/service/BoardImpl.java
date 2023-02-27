@@ -52,7 +52,10 @@ public class BoardImpl implements Board{
 
     @Override
     public void updateMove(int col, Piece move) {
-
+        int nextAvailableSpot = findNextAvailableSpot(col);
+        if (nextAvailableSpot != -1) {
+            pieces[col][nextAvailableSpot] = move;
+        }
     }
 
     @Override
