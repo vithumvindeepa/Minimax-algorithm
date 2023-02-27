@@ -16,28 +16,12 @@ public class Winner {
         this.row2=-1;
     }
 
-    public static int getNumOfCols() {
-        return NUM_OF_COLS;
-    }
-
-    public static int getNumOfRows() {
-        return NUM_OF_ROWS;
-    }
-
     public Piece getWinningPiece() {
         return winningPiece;
     }
 
     public void setWinningPiece(Piece winningPiece) {
         this.winningPiece = winningPiece;
-    }
-
-    public Piece[][] getPieces() {
-        return pieces;
-    }
-
-    public void setPieces(Piece[][] pieces) {
-        this.pieces = pieces;
     }
 
     public int getCol1() {
