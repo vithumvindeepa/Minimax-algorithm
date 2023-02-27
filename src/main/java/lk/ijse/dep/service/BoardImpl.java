@@ -11,7 +11,7 @@ public class BoardImpl implements Board{
 
         for (int col=0; col<NUM_OF_COLS;col++){
             for (int row=0;row<NUM_OF_ROWS;row++){
-                pieces[col][row]=Piece.EMPTY
+                pieces[col][row]=Piece.EMPTY;
             }
         }
     }
