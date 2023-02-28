@@ -60,11 +60,33 @@ public class BoardImpl implements Board{
 
     @Override
    public void updateMove(int col,int row,Piece move){
-
+        pieces[col][row]=move;
    }
 
     @Override
     public Winner findWinner() {
-        return null;
+
+// Check horizontally
+        for (int row = 0; row < NUM_OF_ROWS; row++) {
+            for (int col = 0; col < NUM_OF_COLS - 3; col++) {
+                Piece current = pieces[col][row];
+                if (current != Piece.EMPTY && current == pieces[col + 1][row] && current == pieces[col + 2][row] && current == pieces[col + 3][row]) {
+                    return new Winner(current, col, row, col + 3, row);
+                }
+            }
+        }
+
+        // Check vertically
+        for (int col = 0; col < NUM_OF_COLS; col++) {
+            for (int row = 0; row < NUM_OF_ROWS - 3; row++) {
+                Piece current = pieces[col][row];
+                if (current != Piece.EMPTY && current == pieces[col][row + 1] && current == pieces[col][row + 2] && current == pieces[col][row + 3]) {
+                    return new Winner(current, col, row, col, row + 3);
+                }
+            }
+        }
+
+        // No winner found
+        return new Winner(Piece.EMPTY);
     }
 }

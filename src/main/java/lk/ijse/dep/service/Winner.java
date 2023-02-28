@@ -16,6 +16,10 @@ public class Winner {
         this.row2=-1;
     }
 
+    public Winner(Piece current, int col, int row, int i, int row1) {
+
+    }
+
     public Piece getWinningPiece() {
         return winningPiece;
     }
